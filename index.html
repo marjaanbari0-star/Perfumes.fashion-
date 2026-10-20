@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Perfume Fashion | Top 10 Affordable Perfumes in the UAE</title>
+<meta name="description" content="Perfume Fashion: top 10 affordable perfumes in the UAE with prices in AED and USD, scents, and bottle sizes.">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#faf6ef;--card:#fff;--ink:#1d1a16;--mute:#6f675c;--gold:#a8772a;--line:#e8dfd0}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#16130f;--card:#201c17;--ink:#f3ece0;--mute:#a89e8e;--gold:#d9a54e;--line:#342e26}}
+:root[data-theme="dark"]{--bg:#16130f;--card:#201c17;--ink:#f3ece0;--mute:#a89e8e;--gold:#d9a54e;--line:#342e26}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif}
+header{text-align:center;padding:48px 20px 24px}
+header small{letter-spacing:.25em;text-transform:uppercase;color:var(--gold);font-family:system-ui,sans-serif;font-size:12px}
+h1{font-size:clamp(30px,6vw,52px);margin:10px 0;font-weight:500}
+header p{color:var(--mute);max-width:520px;margin:0 auto;font-family:system-ui,sans-serif}
+.bar{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding:16px;font-family:system-ui,sans-serif}
+.seg{display:flex;border:1px solid var(--line);border-radius:99px;overflow:hidden;background:var(--card)}
+.seg button{border:0;background:none;color:var(--ink);padding:9px 16px;font-size:14px;cursor:pointer}
+.seg button.on{background:var(--gold);color:#fff}
+input{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:9px 16px;font-size:14px;min-width:200px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;max-width:1100px;margin:0 auto;padding:8px 16px 40px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;position:relative}
+.num{position:absolute;top:14px;right:18px;font-size:34px;color:var(--line);font-weight:700}
+.card h2{font-size:20px;margin:0 36px 6px 0;font-weight:600}
+.price{color:var(--gold);font-size:22px;margin:6px 0}
+.sub{color:var(--mute);font-size:13px;font-family:system-ui,sans-serif}
+.smell{margin:12px 0;font-family:system-ui,sans-serif;font-size:14px}
+.tag{display:inline-block;font-family:system-ui,sans-serif;font-size:12px;border:1px solid var(--gold);color:var(--gold);border-radius:99px;padding:3px 10px}
+.pic{display:flex;justify-content:center;align-items:flex-end;height:150px;margin:4px 0 12px;background:linear-gradient(var(--bg),var(--card));border-radius:12px;padding-top:6px}.pic svg{transition:all .2s}.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;font-family:system-ui,sans-serif}.chips span{font-size:12px;color:var(--mute);align-self:center;margin-right:2px}.chips button{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:99px;padding:5px 12px;font-size:13px;cursor:pointer}.chips button.on{background:var(--gold);border-color:var(--gold);color:#fff}
+footer{text-align:center;color:var(--mute);font-size:12px;padding:0 20px 40px;font-family:system-ui,sans-serif}
+</style>
+</head>
+<body>
+<header>
+<small>perfume.fashion</small>
+<h1>Top 10 Affordable Perfumes</h1>
+<p>Budget-friendly picks popular in the UAE, with prices in dirhams and US dollars.</p>
+</header>
+<div class="bar">
+<div class="seg" id="cur"><button data-c="both" class="on">AED + USD</button><button data-c="aed">AED</button><button data-c="usd">USD</button></div>
+<input id="q" type="search" placeholder="Search scent or occasion…">
+</div>
+<main class="grid" id="grid"></main>
+<footer>Prices are approximate. USD converted at 1 USD = 3.6725 AED (the fixed dirham peg). Bottle pictures are illustrations, not product photos. Sizes shown are commonly sold sizes and prices are for the standard bottle, so check the store for exact sizes and prices.</footer>
+<script>
+var RATE=3.6725;
+var P=[
+["Lattafa Asad",60,90,"Spicy, warm, vanilla","Evenings"],
+["Afnan 9 PM",80,110,"Sweet apple, vanilla","Parties and dates"],
+["Lattafa Khamrah",70,110,"Cinnamon, vanilla, sweet spices","Nights out"],
+["Lattafa Fakhar Black",60,100,"Fresh, clean, woody","Everyday wear"],
+["Lattafa Qaed Al Fursan",40,70,"Juicy pineapple, woods","Casual wear"],
+["Rasasi Hawas",100,160,"Fruity, fresh, aquatic","UAE daytime"],
+["Armaf Club de Nuit Intense Man",100,160,"Citrusy, smoky, woody","Going out"],
+["Lattafa Ramz Silver",50,80,"Sweet, fruity, vanilla","Everyday and evenings"],
+["Jaguar Classic Black",35,60,"Fresh, spicy, smooth","School or daily wear"],
+["Lattafa Khamrah Qahwa",80,130,"Coffee, vanilla, cinnamon","Cool evenings"]];
+var S=[["#b5651d",[50,100]],["#c0392b",[100]],["#7a3b1d",[100]],["#1f2a38",[100]],["#d4a017",[90]],["#2e86ab",[50,100]],["#2b2b2b",[30,105,200]],["#8e5ea2",[100]],["#111827",[100]],["#5b3a29",[100]]];
+var sel={};
+function cs(i){var s=S[i][1];return sel[i]||s[s.length-1]}
+function bottle(i){var m=cs(i),f=.5+.5*Math.min(1,m/105);
+return '<svg viewBox="0 0 100 140" width="100" height="140" role="img" aria-label="'+P[i][0]+' '+m+' ml bottle"><g transform="translate(50 136) scale('+f+') translate(-50 -136)"><rect x="38" y="10" width="24" height="28" rx="4" fill="#a8772a"/><rect x="42" y="36" width="16" height="14" fill="#c9c9c9"/><rect x="22" y="48" width="56" height="88" rx="10" fill="'+S[i][0]+'"/><rect x="28" y="56" width="5" height="66" rx="2.5" fill="#fff" opacity=".25"/><rect x="34" y="76" width="36" height="34" rx="3" fill="#fff" opacity=".9"/><text x="52" y="98" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="700" fill="#222">'+m+' ml</text></g></svg>'}
+function chips(i){var h='<div class="chips"><span>Size:</span>';S[i][1].forEach(function(m){h+='<button data-i="'+i+'" data-m="'+m+'" class="'+(m==cs(i)?'on':'')+'">'+m+' ml</button>'});return h+'</div>'}
+var cur="both";
+function usd(a){return Math.round(a/RATE)}
+function render(){
+var q=document.getElementById("q").value.toLowerCase(),h="";
+P.forEach(function(p,i){
+if(q&&(p.join(" ").toLowerCase().indexOf(q)<0))return;
+var a="AED "+p[1]+"–"+p[2],u="$"+usd(p[1])+"–"+usd(p[2]);
+var main=cur=="usd"?u:a,sub=cur=="both"?u:"";
+h+='<div class="card"><div class="num">'+(i+1)+'</div><div class="pic">'+bottle(i)+'</div><h2>'+p[0]+'</h2><div class="price">'+main+'</div>'+(sub?'<div class="sub">≈ '+sub+' USD</div>':'')+'<div class="smell">'+p[3]+'</div><span class="tag">'+p[4]+'</span>'+chips(i)+'</div>';
+});
+document.getElementById("grid").innerHTML=h||'<p class="sub" style="text-align:center;grid-column:1/-1">No matches.</p>';
+}
+document.getElementById("cur").onclick=function(e){var c=e.target.dataset.c;if(!c)return;cur=c;[].forEach.call(this.children,function(b){b.classList.toggle("on",b.dataset.c==c)});render()};
+document.getElementById("q").oninput=render;
+document.getElementById("grid").onclick=function(e){var b=e.target.closest("button");if(!b||!b.dataset.m)return;sel[b.dataset.i]=+b.dataset.m;render()};
+render();
+</script>
+</body>
+</html>
